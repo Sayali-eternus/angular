@@ -1,0 +1,28 @@
+  <div ng-controller="app.invoice" class="container">
+        <table class="table table-condense" border="1">
+           
+            <thead>
+   
+                <tr class="bg-primary">
+                    <th>Select Product</th>
+                    <th>Product Name</th>                 
+                    <th>Price</th>            
+                </tr>
+            </thead>
+            <tbody>
+                 <tr ng-repeat="item in items">
+                    <td><input type="checkbox" ng-model="item.select" ng-click="setTotals(item)"></td>
+                    <td>{{item.name}}</td>   
+                    <td>{{item.price }}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="bg-warning">
+                    <td></td>
+                    <td>Totals</td>            
+                    <td>{{invoiceTotal }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

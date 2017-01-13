@@ -1,0 +1,21 @@
+
+
+<p>Click the table headers to sort:</p>
+
+<div ng-controller="employeeCtrl">
+<input type="text" ng-model="searchname">
+<table border="1" width="50%">
+<tr>
+<th ng-click="orderByMe('id')">Id</th>
+<th ng-click="orderByMe('name')">Name</th>
+<th ng-click="orderByMe('technology')">Technology</th>
+
+</tr>
+<tr ng-repeat="detail in details | orderBy:myOrderBy | filter: searchname">
+<td>{{detail.id}}</td>
+<td>{{detail.name}}</td>
+<td>{{detail.technology}}</td>
+</tr>
+</table>
+
+</div>
